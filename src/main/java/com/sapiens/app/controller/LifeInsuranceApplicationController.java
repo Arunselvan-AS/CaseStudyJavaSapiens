@@ -49,6 +49,7 @@ public class LifeInsuranceApplicationController
 	@PostMapping("/createpolicy")
 	public String createPolicy(@ModelAttribute("policy") Policy policy)
 	{
+		policy.setPolicyStatus("Pending");
 		policyService.savePolicy(policy);
 		return "redirect:/";
 	}
